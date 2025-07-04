@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { MapPin, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
@@ -116,6 +115,31 @@ const Index = () => {
         <div className="bg-white rounded-xl shadow-lg p-8">
           <h3 className="text-xl font-semibold mb-6">Historical AQI Data</h3>
           <HistoricalChart />
+        </div>
+
+        {/* Detailed Health Recommendations */}
+        <div className="bg-white rounded-xl shadow-lg p-8">
+          <h3 className="text-xl font-semibold mb-6">Detailed Health Recommendations</h3>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 className="text-lg font-semibold mb-3 text-blue-600">General Guidelines</h4>
+              <ul className="space-y-2 text-gray-700">
+                <li>• Consult healthcare professionals for respiratory issues</li>
+                <li>• Use N95 masks during high pollution days</li>
+                <li>• Keep windows closed during peak pollution hours</li>
+                <li>• Consider air purifiers for indoor spaces</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-lg font-semibold mb-3 text-green-600">Preventive Measures</h4>
+              <ul className="space-y-2 text-gray-700">
+                <li>• Exercise indoors when AQI is above 100</li>
+                <li>• Stay hydrated to help flush toxins</li>
+                <li>• Avoid outdoor activities during rush hours</li>
+                <li>• Use public transport to reduce emissions</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         {/* Major Cities */}

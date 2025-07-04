@@ -13,6 +13,15 @@ const Index = () => {
   const [currentAQI, setCurrentAQI] = useState(75);
   const [selectedCity, setSelectedCity] = useState("Delhi");
 
+  const getAQIColor = (aqi: number) => {
+    if (aqi <= 50) return "text-green-600";
+    if (aqi <= 100) return "text-yellow-600";
+    if (aqi <= 150) return "text-orange-600";
+    if (aqi <= 200) return "text-red-600";
+    if (aqi <= 300) return "text-purple-600";
+    return "text-red-800";
+  };
+
   const getAQIStatus = (aqi: number) => {
     if (aqi <= 50) return { status: "Good", color: "text-green-600", suggestion: "Air quality is satisfactory. Perfect for outdoor activities!" };
     if (aqi <= 100) return { status: "Moderate", color: "text-yellow-600", suggestion: "Air quality is acceptable. Sensitive individuals should limit outdoor activities." };
@@ -94,7 +103,7 @@ const Index = () => {
           <div className="flex items-center justify-center space-x-8">
             <AQIMeter value={currentAQI} />
             <div className="text-center">
-              <div className="text-6xl font-bold text-gray-800 mb-2">{currentAQI}</div>
+              <div className={`text-6xl font-bold mb-2 ${getAQIColor(currentAQI)}`}>{currentAQI}</div>
               <div className={`text-xl font-semibold mb-4 ${aqiData.color}`}>
                 {aqiData.status}
               </div>

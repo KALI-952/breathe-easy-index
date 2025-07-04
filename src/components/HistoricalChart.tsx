@@ -10,8 +10,17 @@ const HistoricalChart = () => {
   const generateHistoricalData = (days: number) => {
     const data = [];
     for (let i = days; i >= 1; i--) {
+      let label = "";
+      if (selectedPeriod === "days") {
+        label = `Day ${days - i + 1}`;
+      } else if (selectedPeriod === "week") {
+        label = `Week ${Math.ceil((days - i + 1) / 7)}`;
+      } else {
+        label = `${i}/${new Date().getMonth() + 1}`;
+      }
+      
       data.push({
-        day: selectedPeriod === "days" ? `Day ${days - i + 1}` : `${i}/${new Date().getMonth() + 1}`,
+        day: label,
         aqi: Math.floor(Math.random() * 200) + 30
       });
     }
@@ -46,6 +55,7 @@ const HistoricalChart = () => {
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="days">Days</SelectItem>
+              <SelectItem value="week">Week</SelectItem>
               <SelectItem value="month">Month</SelectItem>
             </SelectContent>
           </Select>

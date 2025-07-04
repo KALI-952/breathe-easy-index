@@ -4,11 +4,7 @@ const MajorCities = () => {
     { name: "Delhi", aqi: 178, status: "Unhealthy" },
     { name: "Mumbai", aqi: 95, status: "Moderate" },
     { name: "Bangalore", aqi: 68, status: "Moderate" },
-    { name: "Chennai", aqi: 85, status: "Moderate" },
-    { name: "Kolkata", aqi: 145, status: "Unhealthy for Sensitive Groups" },
-    { name: "Hyderabad", aqi: 72, status: "Moderate" },
-    { name: "Pune", aqi: 88, status: "Moderate" },
-    { name: "Ahmedabad", aqi: 125, status: "Unhealthy for Sensitive Groups" }
+    { name: "Kolkata", aqi: 145, status: "Unhealthy for Sensitive Groups" }
   ];
 
   const getBarColor = (aqi: number) => {
